@@ -148,16 +148,19 @@ tree 102
 
 10 directories, 10 files
 ```
+
 We will have to add a directive to include our binary file in the debin directory to take care of that.
 Remove the the directory **102** and all new files in **debian** that above runs have created.
 Also remove the directory ../*obj-x86_64-linux-gnu*.
+
 ```bash
 rm -fr 102
 rm -fr ../obj-x86_64-linux-gnu
 rm 102.substvars
 rm debhelper-build-stamp
 rm files
-´´´
+```
+
 Before we can build in the chroot we have to update the **rules**.
 The binaries should be end up in /opt/ZUL/bin after our enterprise name **ZUL**:
 
@@ -206,7 +209,7 @@ A number of new files have been created at parent directory:
 102_0.0~git20180303.53e3bf5.orig.tar.xz
 itp-102.txt
 ```
-Install and test the 102 application:
+Install the 102 application:
 ```bash
 sudo dpkg -i 102_0.0~git20180303.53e3bf5-1_amd64.deb
 Selecting previously unselected package 102.
@@ -237,7 +240,7 @@ dpkg -L 102
 ```
 
 In another chapter in the ZUL enterprise golang journey, usage of all this will be explained.
-The short git aliases used here is in user ~.gitconfig:
+The short git aliases used here is in user ~/.gitconfig:
 ```bash
 [aliases]
 com = commit
